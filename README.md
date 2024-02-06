@@ -1,1 +1,1 @@
-# async-media-gallery
+# Asynchronous Media Gallery

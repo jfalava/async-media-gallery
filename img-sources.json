@@ -1,0 +1,17 @@
+[
+  {
+    "src": "https://raw.githubusercontent.com/link-u/avif-sample-images/master/fox.profile2.12bpc.yuv444.odd-height.avif",
+    "tags": "TagOne Tag2",
+    "description": "<span>This description supports HTML</span>."
+  },
+  {
+    "src": "https://libre-software.net/wp-content/uploads/AVIF/AVIF%20Test%20picture%20%28JPEG%20converted%20to%20AVIF%20with%20Convertio%29.avif",
+    "tags": "Tag2",
+    "description": "<span>This description supports HTML</span>."
+  },
+  {
+    "src": "https://aomediacodec.github.io/av1-avif/testFiles/Link-U/hato.profile0.8bpc.yuv420.no-cdef.avif",
+    "tags": "Three",
+    "description": "<span>This description supports HTML</span>."
+  }
+]
