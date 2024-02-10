@@ -4,12 +4,13 @@ Web application that dynamically loads images and videos from a JSON file into a
 It allows users to tag images and filter the gallery content based on those tags.  
 The gallery supports both images and videos and includes a zoomed view for images.
 
+Check a demo [here](https://jfalava.github.io/async-media-gallery/).
+
 ## Features
 
 * **Tag Filtering**: Users can filter the gallery content by clicking on tags.  
 * **Support for Image and Video**: The gallery can display both image files and video files with controls.  
-* **Modal Image View**: Clicking on an image will open it in a modal for a zoomed view.  
-* **Responsive Layout**: The gallery layout adjusts to different screen sizes.  
+* **Modal Image View**: Clicking on an image will open it in a modal for a zoomed view.
 
 ## How It Works
 
