@@ -21,6 +21,35 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error fetching image data:', error);
     });
 
+  function createTags() {
+    console.log('Creating tags...'); // Check if tags are being created
+    const tagContainer = document.getElementById('tagContainer');
+    if (!tagContainer) {
+      console.error('Tag container not found');
+      return;
+    }
+
+    tags.forEach(tag => {
+      const tagElement = document.createElement('div');
+      tagElement.classList.add('tag');
+      tagElement.innerText = tag.name;
+      tagElement.style.backgroundColor = tag.backgroundColor;
+      tagElement.dataset.tag = tag.name.toLowerCase();
+
+      tagElement.addEventListener('click', function() {
+        // Deselect all tags
+        document.querySelectorAll('.tag').forEach(t => {
+          t.classList.remove('tag-selected');
+        });
+        // Select the clicked tag
+        this.classList.add('tag-selected');
+        loadImagesForTag(tagElement.dataset.tag);
+      });
+
+      tagContainer.appendChild(tagElement);
+    });
+  }
+
 
   // Add an image or video to the gallery based on file type
   function addImageToGallery(image) {
@@ -55,37 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mediaCard.appendChild(mediaInfo);
     gallery.appendChild(mediaCard);
-  }
-
-  // Function to create tags and append them to the tag container
-  function createTags() {
-    console.log('Creating tags...'); // Check if tags are being created
-    const tagContainer = document.getElementById('tagContainer');
-    if (!tagContainer) {
-      console.error('Tag container not found');
-      return;
-    }
-
-    // Assuming 'tags' array is defined elsewhere
-    tags.forEach(tag => {
-      const tagElement = document.createElement('div');
-      tagElement.classList.add('tag');
-      tagElement.innerText = tag.name;
-      tagElement.style.backgroundColor = tag.backgroundColor;
-      tagElement.dataset.tag = tag.name.toLowerCase();
-
-      tagElement.addEventListener('click', function() {
-        // Deselect all tags
-        document.querySelectorAll('.tag').forEach(t => {
-          t.classList.remove('tag-selected');
-        });
-        // Select the clicked tag
-        this.classList.add('tag-selected');
-        loadImagesForTag(tagElement.dataset.tag);
-      });
-
-      tagContainer.appendChild(tagElement);
-    });
   }
 
   // Function to load images for a specific tag

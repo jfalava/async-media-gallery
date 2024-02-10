@@ -6,11 +6,22 @@
     <meta name="color-scheme" content="light, dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Async Media Gallery</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://s3.jfalava.eu/assets%2Ffrom-repos%2Fasync-media-gallery%2Fstyles%2Fstyles.css">
+<!-- ~~~~ Styles ~~~~ -->
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <!--  ~~~~ Body ~~~~ -->
 <body>
 <!-- ~ Gallery Tags ~ -->
+<br><br>
+<div style="text-align: center">
+    <span>Try clicking any tag.</span>
+</div>
+<br><br>
 <div class="tag-container-parent">
     <div class="tag-container" id="tagContainer"></div>
 </div>
@@ -18,8 +29,13 @@
 <div class="gallery" id="gallery">
 </div>
 <div id="imageModal" class="modal">
-    <div id="modal-dismiss" style="display: none;">
-        <span>Press <kbd>Esc</kbd> or click anywhere to dismiss</span>
+    <div id="modal-dismiss" style="display: none;text-align: center;color: white">
+        <span>Example of message and type of the modal.</span>
+        <br>
+        <span>
+            Example:
+            <span style="font-family: monospace">Press <kbd>Esc</kbd> or click anywhere to dismiss</span>
+        </span>
     </div>
     <br>    
     <img class="modal-content" id="zoomedImage" alt="Press ESC or click anywhere to dismiss.">
