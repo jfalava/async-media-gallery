@@ -6,15 +6,13 @@ The gallery supports both images and videos and includes a zoomed view for image
 
 Check a demo [here](https://jfalava.github.io/async-media-gallery/).
 
-## Features
-
-* **Tag Filtering**: Users can filter the gallery content by clicking on tags.  
-* **Support for Image and Video**: The gallery can display both image files and video files with controls.  
-* **Modal Image View**: Clicking on an image will open it in a modal for a zoomed view.
-
 ## How It Works
 
-### `const imageDataStore`: An array to store image and video data fetched from the JSON file
+* The "tag selector" menu initially renders,
+1. A tag is clicked,
+2. The card gallery info (image, description and related tag) is fetched from the data origin (the `img-sources.json`) based on the tag clicked,
+3. The array is populated with that info,
+4. The `addImageToGallery` function is called and renders the HTML gallery card with the array info.
 
 ### `fetchImageData`: fetches a JSON file with image sources and stores the data for later display
 
@@ -22,9 +20,9 @@ Check a demo [here](https://jfalava.github.io/async-media-gallery/).
 * It then triggers the creation of tags based on the fetched data and adds event listeners.  
 * Finally, it logs the loaded image data to the console.
 
-While the function itself is not marked as asynchronous, it deals with asynchronous operations through the `Fetch` API and Promise chaining.
+> While the function itself is not marked as asynchronous, it deals with asynchronous operations through the `Fetch` API and Promise chaining.
 
-### `createTags()`, `const tags`: dynamically based on a predefined array of tag objects, they are a `div` each with a name and background color
+### Tags: dynamically based on a predefined array of tag objects, they are a `div` each with a name and background color
 
 * Tags are created based on the provided data and appended to the specified container element in the HTML document.
 * Each tag is clickable and triggers an event that selects the clicked tag and loads relevant content associated with it.
@@ -37,9 +35,6 @@ While the function itself is not marked as asynchronous, it deals with asynchron
 * `.tag:hover`: styles the container where the tags are appended.
 
 ### Gallery Population: Images and videos are added to the gallery based on their file type
-
-Designed to dynamically add images or videos to a gallery in a web page.  
-It accepts an object representing an image or video, and creates appropriate HTML elements to display it within the gallery.  
 
 #### Parameters (given by the`img-sources.json` file)
 
@@ -122,7 +117,7 @@ This is an example of a modal style, that tries to reflect it:
 ```
 
 * `#modal-dismiss`: styles the dismiss message.
-  * An `id` instead of a `class` for tracking purposes, but you can change it by changing the script to `const modalDismiss = document.querySelector('.modal-dismiss');` and using a class instead
+  * Coded as an `id` instead of a `class` for tracking purposes, but you can change it by changing the script to `const modalDismiss = document.querySelector('.modal-dismiss');` and using a class instead
 
 ## Setup
 
